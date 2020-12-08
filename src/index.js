@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import hljs from 'highlight.js';
@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
   table: {
     minWidth: 650,
   },
-  analyticsCard: {
+  analyticsKeyboard: {
     marginBottom: 1 + "rem",
     textAlign: "center"
   }
@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
 
 function Keyboard(props) {
   return (
-    <TextField onChange={(e) => props.onChange(e)} value={props.textVal} size="medium" />
+    <TextField onChange={(e) => props.onChange(e)} value={props.textVal} size="medium" autoFocus />
   )
 }
 
@@ -237,7 +237,7 @@ class Screen extends React.Component {
     return (
       <div>
         <Container style={containerStyle}>
-          <Grid container spacing={10}>
+          <Grid container spacing={5}>
             <Grid item xs={12} md={8}>
               <Card>
                 <CardContent>
@@ -282,18 +282,21 @@ function Top(props) {
   return (
     <div>
       <Container className={classes.containerStyle}>
-        <Grid container spacing={10}>
+        <Grid container>
           <Grid item xs={12} md={12}>
-            <h3>TypeFire</h3>
-            <p>TypeFireはプログラミング初学者のためのTypeFireです。<br />
+            <h3>Type-Fire（仮）</h3>
+            <p>Type-Fireはプログラミング初学者のためのタイピングアプリです。<br />
+            プログラミング用語 x タイピング というどこかにありそうなコンセプトのもと作成しています。<br />
             以下のリンクをクリックするとタイピングの練習が始まります。<br />
-            No Fire（※タイプミスしないという意味）目指して遊んでみてください。<br />
             </p>
-            <Link to="/t/php-basic/5">#php-basic</Link><br />
-            <Link to="/t/php-string/5">#php-string</Link><br />
-            <Link to="/t/php-array/5">#php-array</Link><br />
-            <Link to="/t/php-filesystem/5">#php-filesystem</Link><br />
-            <Link to="/t/php-all/100">#php-all</Link><br />
+            <Link to="/t/php-basic/5">#php-basic(5)</Link><br />
+            <Link to="/t/php-string/5">#php-string(5)</Link><br />
+            <Link to="/t/php-array/5">#php-array(5)</Link><br />
+            <Link to="/t/php-filesystem/5">#php-filesystem(5)</Link><br />
+            <Link to="/t/php-all/20">#php-all(20)</Link><br />
+
+            <h3>Author</h3>
+            <a href="https://twitter.com/murayama333" target="_blank" rel="noopener noreferrer">Twitter: murayama333</a>
           </Grid>
         </Grid>
       </Container>
@@ -415,7 +418,7 @@ function Score(props) {
       miss_index++
       let message = "　"
       if (miss_type_count[k.toLowerCase()] != null) {
-        message = miss_type_count[k.toLowerCase()] + " Fire"
+        message = miss_type_count[k.toLowerCase()] + "F"
       }
       const cardClassName = "miss-card" + (message !== "　" ? " active" : "")
       return (
@@ -437,23 +440,25 @@ function Score(props) {
   let status
   let statusClassName
   if (fire > 0) {
-    status = fire + " Fire"
+    status = fire + " Fire!"
     statusClassName = "active"
   } else {
     status = "No Fire!"
     statusClassName = "excellent"
   }
   totalTime = Math.floor((totalTime) * 100) / 100
-  const accuracy = Math.floor((question_content_length / answer_content_length) * 100)
 
+  const accuracy = Math.floor((question_content_length / answer_content_length) * 100)
+  const typePerSecond = Math.floor(question_content_length / totalTime * 100) / 100
+  const firePerSecond = Math.floor(fire / totalTime * 100) / 100
   const classes = useStyles();
   return (
     <div>
       <Container className={classes.containerStyle}>
-        <Grid container spacing={10}>
+        <Grid container spacing={6}>
           <Grid item xs={12} md={12}>
 
-            <Grid container spacing={1} className={classes.analyticsCard}>
+            <Grid container spacing={1} className={classes.analyticsKeyboard}>
               {miss_type_analytics}
             </Grid>
 
@@ -478,7 +483,7 @@ function Score(props) {
               </Grid>
 
               <Grid item xs={12} md={3}>
-                <Card className={classes.analyticsCard}>
+                <Card className="analyticsCard">
                   <CardContent>
                     <Typography color="textSecondary">
                       ステータス
@@ -486,20 +491,39 @@ function Score(props) {
                     <h1 className={statusClassName}>{status}</h1>
                   </CardContent>
                 </Card>
-                <Card className={classes.analyticsCard}>
+                <Card className="analyticsCard">
                   <CardContent>
                     <Typography color="textSecondary">
-                      ヒット率
+                      ヒット率（{question_content_length} / {answer_content_length}）
                     </Typography>
                     <h1>{accuracy}%</h1>
+                    <Typography color="textPrimary">
+
+                    </Typography>
                   </CardContent>
                 </Card>
-                <Card className={classes.analyticsCard}>
+                <Card className="analyticsCard">
                   <CardContent>
                     <Typography color="textSecondary">
                       タイム
                     </Typography>
                     <h1>{totalTime}s</h1>
+                  </CardContent>
+                </Card>
+                <Card className="analyticsCard">
+                  <CardContent>
+                    <Typography color="textSecondary">
+                      スピード（1秒あたりのタイプ数）
+                    </Typography>
+                    <h1>{typePerSecond} t/s</h1>
+                  </CardContent>
+                </Card>
+                <Card className="analyticsCard">
+                  <CardContent>
+                    <Typography color="textSecondary">
+                      Fireスピード（1秒あたりのFire数）
+                    </Typography>
+                    <h1>{firePerSecond} f/s</h1>
                   </CardContent>
                 </Card>
               </Grid>
@@ -521,7 +545,7 @@ function App(props) {
             <Container style={{ "paddingLeft": "0" }}>
               <Toolbar>
                 <Typography variant="h6">
-                  <Link className={classes.link} to="/">TypeFire v0.31</Link>
+                  <Link className={classes.link} to="/">Type-Fire v0.31</Link>
                 </Typography>
               </Toolbar>
             </Container>
