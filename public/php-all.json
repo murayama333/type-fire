@@ -1,0 +1,200 @@
+[{
+    "id": 1,
+    "content": "echo",
+    "desc": "1つ以上の文字列を出力する",
+    "url": ""
+  },
+  {
+    "id": 2,
+    "content": "integer",
+    "desc": "整数型",
+    "url": "https://code-php.com/php-basic/var/type/"
+  },
+  {
+    "id": 3,
+    "content": "float",
+    "desc": "浮動小数点数型",
+    "url": "https://code-php.com/php-basic/var/type/"
+  },
+  {
+    "id": 4,
+    "content": "string",
+    "desc": "文字列型",
+    "url": "https://code-php.com/php-basic/var/type/"
+  },
+  {
+    "id": 5,
+    "content": "boolean",
+    "desc": "論理型",
+    "url": "https://code-php.com/php-basic/var/type/"
+  },
+  {
+    "id": 6,
+    "content": "array",
+    "desc": "配列型",
+    "url": "https://code-php.com/php-basic/var/type/"
+  },
+  {
+    "id": 7,
+    "content": "null",
+    "desc": "NULL型",
+    "url": "https://code-php.com/php-basic/var/type/"
+  },
+  {
+    "id": 8,
+    "content": "if",
+    "desc": "分岐構造",
+    "url": "https://code-php.com/php-basic/choice/if/"
+  },
+  {
+    "id": 9,
+    "content": "else",
+    "desc": "分岐構造（if文が不成立の場合）",
+    "url": "https://code-php.com/php-basic/choice/if-else/"
+  },
+  {
+    "id": 10,
+    "content": "elseif",
+    "desc": "分岐構造（if文の条件が複数存在する場合）",
+    "url": "https://code-php.com/php-basic/choice/if-elseif/"
+  },
+  {
+    "id": 11,
+    "content": "while",
+    "desc": "反復構造（単純（Simple）なループ）",
+    "url": "https://code-php.com/php-basic/var/type/"
+  },
+  {
+    "id": 12,
+    "content": "for",
+    "desc": "反復構造（複雑（Complex）なループ）",
+    "url": "https://code-php.com/php-basic/var/type/"
+  },
+  {
+    "id": 13,
+    "content": "break",
+    "desc": "反復処理（ループ）を終了する",
+    "url": "https://code-php.com/php-basic/loop/break/"
+  },
+  {
+    "id": 14,
+    "content": "continue",
+    "desc": "次の反復処理（ループ）に進む",
+    "url": "https://code-php.com/php-basic/loop/break/"
+  },
+  {
+    "id": 15,
+    "content": "function",
+    "desc": "ユーザ定義関数",
+    "url": "https://code-php.com/php-basic/function-user/index/"
+  },
+  {
+    "id": 21,
+    "content": "strlen",
+    "desc": "文字列の長さを得る",
+    "url": "https://code-php.com/php-basic/function-string/strlen/"
+  },
+  {
+    "id": 22,
+    "content": "strtolower",
+    "desc": "文字列を小文字にする",
+    "url": "https://code-php.com/php-basic/function-string/strtolower/"
+  },
+  {
+    "id": 23,
+    "content": "substr",
+    "desc": "文字列の一部分を返す",
+    "url": "https://code-php.com/php-basic/function-string/substr/"
+  },
+  {
+    "id": 24,
+    "content": "explode",
+    "desc": "文字列を文字列により分割する",
+    "url": "https://code-php.com/php-basic/function-string/explode/"
+  },
+  {
+    "id": 25,
+    "content": "implode",
+    "desc": "配列要素を文字列により連結する",
+    "url": "https://code-php.com/php-basic/function-string/implode/"
+  },
+  {
+    "id": 31,
+    "content": "count",
+    "desc": "変数に含まれるすべての要素を数える",
+    "url": "https://code-php.com/php-basic/function-array/count/"
+  },
+  {
+    "id": 32,
+    "content": "array_reverse",
+    "desc": "要素を逆順にした配列を返す",
+    "url": "https://code-php.com/php-basic/function-array/array_reverse/"
+  },
+  {
+    "id": 33,
+    "content": "array_sum",
+    "desc": "配列の中の値の合計を計算する",
+    "url": "https://code-php.com/php-basic/function-array/array_sum/"
+  },
+  {
+    "id": 34,
+    "content": "array_slice",
+    "desc": "配列の一部を展開する",
+    "url": "https://code-php.com/php-basic/function-array/array_slice/"
+  },
+  {
+    "id": 35,
+    "content": "sort",
+    "desc": "配列をソートする",
+    "url": "https://code-php.com/php-basic/function-array/sort/"
+  },
+
+  {
+    "id": 41,
+    "content": "file_put_contents",
+    "desc": "文字列をファイルに書き込む",
+    "url": "https://code-php.com/php-basic/function-filesystem/file_put_contents/"
+  },
+  {
+    "id": 42,
+    "content": "file_get_contents",
+    "desc": "ファイルの内容を全て文字列に読み込む",
+    "url": "https://code-php.com/php-basic/function-filesystem/file_get_contents/"
+  },
+  {
+    "id": 43,
+    "content": "file",
+    "desc": "ファイル全体を読み込んで配列に格納する",
+    "url": "https://code-php.com/php-basic/function-filesystem/file/"
+  },
+  {
+    "id": 44,
+    "content": "mkdir",
+    "desc": "ディレクトリを作る",
+    "url": "https://code-php.com/php-basic/function-filesystem/mkdir/"
+  },
+  {
+    "id": 45,
+    "content": "fopen",
+    "desc": "ファイルまたは URL をオープンする",
+    "url": "https://code-php.com/php-basic/function-filesystem/fgets/"
+  },
+  {
+    "id": 46,
+    "content": "fgets",
+    "desc": "ファイルまたは URL をオープンする",
+    "url": "https://code-php.com/php-basic/function-filesystem/fgets/"
+  },
+  {
+    "id": 47,
+    "content": "fclose",
+    "desc": "オープンされたファイルポインタをクローズする",
+    "url": "https://code-php.com/php-basic/function-filesystem/fgets/"
+  },
+  {
+    "id": 48,
+    "content": "fwrite",
+    "desc": "バイナリセーフなファイル書き込み処理",
+    "url": "https://code-php.com/php-basic/function-filesystem/fwrite/"
+  }
+]

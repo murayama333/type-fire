@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "content": "count",
+    "desc": "変数に含まれるすべての要素を数える",
+    "url": "https://code-php.com/php-basic/function-array/count/"
+  },
+  {
+    "id": 2,
+    "content": "array_reverse",
+    "desc": "要素を逆順にした配列を返す",
+    "url": "https://code-php.com/php-basic/function-array/array_reverse/"
+  },
+  {
+    "id": 3,
+    "content": "array_sum",
+    "desc": "配列の中の値の合計を計算する",
+    "url": "https://code-php.com/php-basic/function-array/array_sum/"
+  },
+  {
+    "id": 4,
+    "content": "array_slice",
+    "desc": "配列の一部を展開する",
+    "url": "https://code-php.com/php-basic/function-array/array_slice/"
+  },
+  {
+    "id": 5,
+    "content": "sort",
+    "desc": "配列をソートする",
+    "url": "https://code-php.com/php-basic/function-array/sort/"
+  }
+]

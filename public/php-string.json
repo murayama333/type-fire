@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "content": "strlen",
+    "desc": "文字列の長さを得る",
+    "url": "https://code-php.com/php-basic/function-string/strlen/"
+  },
+  {
+    "id": 2,
+    "content": "strtolower",
+    "desc": "文字列を小文字にする",
+    "url": "https://code-php.com/php-basic/function-string/strtolower/"
+  },
+  {
+    "id": 3,
+    "content": "substr",
+    "desc": "文字列の一部分を返す",
+    "url": "https://code-php.com/php-basic/function-string/substr/"
+  },
+  {
+    "id": 4,
+    "content": "explode",
+    "desc": "文字列を文字列により分割する",
+    "url": "https://code-php.com/php-basic/function-string/explode/"
+  },
+  {
+    "id": 5,
+    "content": "implode",
+    "desc": "配列要素を文字列により連結する",
+    "url": "https://code-php.com/php-basic/function-string/implode/"
+  }
+]

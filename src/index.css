@@ -1,13 +1,46 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: #fafafa;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.active {
+  color: #f44336;
 }
+
+.excellent {
+  color: #8bc34a;
+}
+
+.miss-grid .miss-card .MuiCardContent-root {
+  padding-top: 0.5rem;
+}
+
+.miss-grid .miss-card .MuiCardContent-root h1 {
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.miss-grid .miss-card .MuiCardContent-root p {
+  text-align: center;
+  font-size: 0.8rem;
+  margin-bottom: 0;
+}
+
+.miss-grid .miss-card.active {
+  background-color: #f44336;
+}
+
+.miss-grid .miss-card.active h1 {
+  color: white;
+}
+
+.miss-grid .miss-card.active p {
+  color: white;
+}
+
+
+pre code.hljs {
+  padding: 1.2rem;
+} 
+
