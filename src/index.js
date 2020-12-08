@@ -521,7 +521,7 @@ function App(props) {
             <Container style={{ "paddingLeft": "0" }}>
               <Toolbar>
                 <Typography variant="h6">
-                  <Link className={classes.link} to="/">TypeFire v0.3</Link>
+                  <Link className={classes.link} to="/">TypeFire v0.31</Link>
                 </Typography>
               </Toolbar>
             </Container>
