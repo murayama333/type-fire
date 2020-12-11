@@ -7,7 +7,7 @@ body {
 }
 
 .excellent {
-  color: #8bc34a;
+  color: #1b5e20;
 }
 
 .miss-grid .miss-card .MuiCardContent-root {
@@ -31,13 +31,39 @@ body {
   background-color: #f44336;
 }
 
+.miss-grid .miss-card.active2 {
+  background-color: #f44336;
+}
+
+.miss-grid .miss-card.active3 {
+  background-color: #f44336;
+}
+
 .miss-grid .miss-card.active h1 {
+  color: white;
+}
+
+.miss-grid .miss-card.active2 h1 {
+  color: white;
+}
+
+.miss-grid .miss-card.active3 h1 {
   color: white;
 }
 
 .miss-grid .miss-card.active p {
   color: white;
 }
+
+.miss-grid .miss-card.active2 p {
+  color: white;
+}
+
+.miss-grid .miss-card.active3 p {
+  color: white;
+}
+
+
 
 .MuiPaper-root.MuiCard-root.analyticsCard {
   margin-bottom: 1rem;

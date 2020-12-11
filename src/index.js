@@ -20,7 +20,7 @@ import { LibraryBooks } from '@material-ui/icons';
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: "#8bc34a",
+      main: "#1b5e20",
     },
     secondary: {
       main: '#f44336',
@@ -230,20 +230,20 @@ class Screen extends React.Component {
     }
 
 
-    // const ch = questions[currentNo].content.split("")[charIndex]
-    // const keyboard_keys = { [ch]: 1}
+    const ch = questions[currentNo].content.split("")[charIndex]
+    const keyboard_keys = { [ch]: 1 }
 
-    const chars = questions[currentNo].content.substr(charIndex).split("")
-    const keyboard_keys = {}
-    for (let i = 0; i < chars.length; i++) {
-      const ch = chars[i];
-      keyboard_keys[ch] = 1
-    }
+    // const chars = questions[currentNo].content.substr(charIndex).split("")
+    // const keyboard_keys = {}
+    // for (let i = 0; i < chars.length; i++) {
+    //   const ch = chars[i];
+    //   keyboard_keys[ch] = keyboard_keys[ch] ? keyboard_keys[ch] + 1 : 1
+    // }
 
     return (
       <div>
         <Container style={containerStyle}>
-          <Keyboard show_fire={false} miss_type_count={keyboard_keys} />
+          <Keyboard miss_type_count={keyboard_keys} mode="finger" />
           <Grid container spacing={1}>
             <Grid item xs={12} md={12}>
               <Card style={textFieldCard}>
@@ -278,14 +278,9 @@ function Top(props) {
               <CardContent>
                 <h1>Type-Fire</h1>
                 <p>Type-Fireはプログラミング初学者のためのタイピングアプリです。<br />
-                プログラミング用語 x タイピング というどこかにありそうなコンセプトのもと作成しています。<br />
-                以下のリンクをクリックするとタイピングの練習が始まります。<br />
+                プログラミング用語 x タイピング というどこかにありそうなコンセプトのもと開発しています。<br />
+                リンクをクリックするとタイピングの練習が始まります。<br />
                 </p>
-
-                
-                
-                
-                
               </CardContent>
             </Card>
             <Grid container spacing={1}>
@@ -299,49 +294,49 @@ function Top(props) {
               <Grid item xs={12} md={3}>
                 <Card>
                   <CardContent style={{ "paddingBottom": "16px", "textAlign": "center" }}>
-                  <Link to="/t/php-string/5">#php-string(5)</Link>
+                    <Link to="/t/php-string/5">#php-string(5)</Link>
                   </CardContent>
                 </Card>
               </Grid>
               <Grid item xs={12} md={3}>
                 <Card>
                   <CardContent style={{ "paddingBottom": "16px", "textAlign": "center" }}>
-                  <Link to="/t/php-array/5">#php-array(5)</Link>
+                    <Link to="/t/php-array/5">#php-array(5)</Link>
                   </CardContent>
                 </Card>
               </Grid>
               <Grid item xs={12} md={3}>
                 <Card>
                   <CardContent style={{ "paddingBottom": "16px", "textAlign": "center" }}>
-                  <Link to="/t/php-filesystem/5">#php-filesystem(5)</Link>
+                    <Link to="/t/php-filesystem/5">#php-filesystem(5)</Link>
                   </CardContent>
                 </Card>
               </Grid>
               <Grid item xs={12} md={3}>
                 <Card>
                   <CardContent style={{ "paddingBottom": "16px", "textAlign": "center" }}>
-                  <Link to="/t/php-all/10">#php-all(10)</Link>
+                    <Link to="/t/php-all/10">#php-all(10)</Link>
                   </CardContent>
                 </Card>
               </Grid>
               <Grid item xs={12} md={3}>
                 <Card>
                   <CardContent style={{ "paddingBottom": "16px", "textAlign": "center" }}>
-                  <Link to="/t/php-all/10">#php-all(20)</Link>
+                    <Link to="/t/php-all/10">#php-all(20)</Link>
                   </CardContent>
                 </Card>
               </Grid>
               <Grid item xs={12} md={3}>
                 <Card>
                   <CardContent style={{ "paddingBottom": "16px", "textAlign": "center" }}>
-                  <Link to="/t/php-all/30">#php-all(30)</Link>
+                    <Link to="/t/php-all/30">#php-all(30)</Link>
                   </CardContent>
                 </Card>
               </Grid>
               <Grid item xs={12} md={3}>
                 <Card>
                   <CardContent style={{ "paddingBottom": "16px", "textAlign": "center" }}>
-                  <a href="https://twitter.com/murayama333" target="_blank" rel="noopener noreferrer">Twitter: murayama333</a>
+                    <a href="https://twitter.com/murayama333" target="_blank" rel="noopener noreferrer">Twitter: murayama333</a>
                   </CardContent>
                 </Card>
               </Grid>
@@ -354,7 +349,7 @@ function Top(props) {
 }
 
 function Keyboard(props) {
-  let { miss_type_count, show_fire } = props
+  let { miss_type_count, mode } = props
   if (props.location != null) {
     miss_type_count = props.location.state.miss_type_count
   }
@@ -366,21 +361,65 @@ function Keyboard(props) {
     ["Z", "X", "C", "V", "B", "N", "M", ",", ".", "/", "_"],
   ]
 
+  const finger = (k) => {
+    const f = keys_list.map(keys => keys.findIndex(key => key == k)).find(key => key != -1)
+    if (f == 0) {
+      return "左小"
+    }
+    if (f == 1) {
+      return "左薬"
+    }
+    if (f == 2) {
+      return "左中"
+    }
+    if (f == 3) {
+      return "左人"
+    }
+    if (f == 4) {
+      return "左人"
+    }
+    if (f == 5) {
+      return "右人"
+    }
+    if (f == 6) {
+      return "右人"
+    }
+    if (f == 7) {
+      return "右中"
+    }
+    if (f == 8) {
+      return "右薬"
+    }
+    return "右小"
+  }
+
   let miss_index = 0
   const miss_type_analytics = keys_list.map((keys) => {
     return keys.map(k => {
       miss_index++
       let message = "　"
+      let cardClassName = "miss-card"
       if (miss_type_count != null && miss_type_count[k.toLowerCase()] != null) {
-        message = miss_type_count[k.toLowerCase()] + "F"
+        if (mode == "count") {
+          message = miss_type_count[k.toLowerCase()] + "F"
+        } else if (mode == "finger") {
+          message = finger(k.toUpperCase())
+        } 
+        if (miss_type_count[k.toLowerCase()] >= 3) {
+          cardClassName += " active3"
+        } else if (miss_type_count[k.toLowerCase()] == 2) {
+          cardClassName += " active2"
+        } else {
+          cardClassName += " active"
+        }
       }
-      const cardClassName = "miss-card" + (message !== "　" ? " active" : "")
+
       return (
         <Grid item xs={2} md={1} key={miss_index} className="miss-grid">
           <Card className={cardClassName}>
             <CardContent>
               <Typography color="textSecondary">
-                {show_fire ? message : "　"}
+                {message}
               </Typography>
               <h1 className={message !== "　" ? "active" : ""}>{k}</h1>
             </CardContent>
@@ -444,7 +483,7 @@ function Score(props) {
       )
     })
 
-    const marked_answer_contents = answer.content.split("").map((a, i) => {
+    const marked_answer_contents = answer.content.substr(0, 30).split("").map((a, i) => {
       const answer_error = errors.map(e => e.answer_indexes).flat().some(e => e === i)
       if (answer_error) {
         return (
@@ -500,36 +539,36 @@ function Score(props) {
   })
 
 
-  const keys_list = [
-    ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "^"],
-    ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "@", "["],
-    ["A", "S", "D", "F", "G", "H", "J", "K", "L", ";", ":", "]"],
-    ["Z", "X", "C", "V", "B", "N", "M", ",", ".", "/", "_"],
-  ]
+  // const keys_list = [
+  //   ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "^"],
+  //   ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "@", "["],
+  //   ["A", "S", "D", "F", "G", "H", "J", "K", "L", ";", ":", "]"],
+  //   ["Z", "X", "C", "V", "B", "N", "M", ",", ".", "/", "_"],
+  // ]
 
-  let miss_index = 0
-  const miss_type_analytics = keys_list.map((keys) => {
-    return keys.map(k => {
-      miss_index++
-      let message = "　"
-      if (miss_type_count[k.toLowerCase()] != null) {
-        message = miss_type_count[k.toLowerCase()] + "F"
-      }
-      const cardClassName = "miss-card" + (message !== "　" ? " active" : "")
-      return (
-        <Grid item xs={2} md={1} key={miss_index} className="miss-grid">
-          <Card className={cardClassName}>
-            <CardContent>
-              <Typography color="textSecondary">
-                {message}
-              </Typography>
-              <h1 className={message !== "　" ? "active" : ""}>{k}</h1>
-            </CardContent>
-          </Card>
-        </Grid>
-      )
-    })
-  })
+  // let miss_index = 0
+  // const miss_type_analytics = keys_list.map((keys) => {
+  //   return keys.map(k => {
+  //     miss_index++
+  //     let message = "　"
+  //     if (miss_type_count[k.toLowerCase()] != null) {
+  //       message = miss_type_count[k.toLowerCase()] + "F"
+  //     }
+  //     const cardClassName = "miss-card" + (message !== "　" ? " active" : "")
+  //     return (
+  //       <Grid item xs={2} md={1} key={miss_index} className="miss-grid">
+  //         <Card className={cardClassName}>
+  //           <CardContent>
+  //             <Typography color="textSecondary">
+  //               {message}
+  //             </Typography>
+  //             <h1 className={message !== "　" ? "active" : ""}>{k}</h1>
+  //           </CardContent>
+  //         </Card>
+  //       </Grid>
+  //     )
+  //   })
+  // })
 
   const fire = answer_content_length - question_content_length
   let status
@@ -553,11 +592,9 @@ function Score(props) {
         <Grid container spacing={6}>
           <Grid item xs={12} md={12}>
 
-            <Grid container spacing={1} className={classes.analyticsKeyboard}>
-              {miss_type_analytics}
-            </Grid>
+            <Keyboard miss_type_count={miss_type_count} mode="count" />
 
-            <Grid container spacing={2}>
+            <Grid container spacing={2} style={{ "marginTop": "1rem" }}>
               <Grid item xs={12} md={9}>
                 <TableContainer component={Paper}>
                   <Table className={classes.table} aria-label="simple table">
