@@ -8,7 +8,7 @@ import php from "highlight.js/lib/languages/php";
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import { AppBar, Card, CardContent, Container, List, ListItem, ListItemText, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField, ThemeProvider, Toolbar, Typography } from '@material-ui/core';
+import { AppBar, Card, CardContent, Container, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField, ThemeProvider, Toolbar, Typography } from '@material-ui/core';
 import axios from 'axios';
 
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
@@ -64,22 +64,18 @@ function InputField(props) {
 function KeywordCards(props) {
   const currentNo = props.currentNo
   let questions = props.questions.slice(currentNo + 1).map((q, i) => {
-    return (<>
-      <Grid item xs={0} md={4} ></Grid>
+    return (<Grid container key={i} style={{ "marginBottom": "1rem" }}>
+      <Grid item xs={12} md={4}></Grid>
       <Grid item xs={12} md={4}>
-        <Card key={i} style={{ "textAlign": "center" }}>
-          <CardContent>
+        <Card style={{ "textAlign": "center" }}>
+          <CardContent style={{ "paddingBottom": "1rem" }}>
             {q.content}
           </CardContent>
         </Card>
       </Grid>
-      <Grid item xs={0} md={4} ></Grid>
-    </>)
+      <Grid item xs={12} md={4}></Grid>
+    </Grid>)
   })
-
-  const listStyle = {
-    "backgroundColor": "#fff",
-  }
 
   return (<Grid container spacing={1}>
     {questions}
@@ -230,15 +226,15 @@ class Screen extends React.Component {
     }
 
 
-    const ch = questions[currentNo].content.split("")[charIndex]
-    const keyboard_keys = { [ch]: 1 }
+    // const ch = questions[currentNo].content.split("")[charIndex]
+    // const keyboard_keys = { [ch]: 1 }
 
-    // const chars = questions[currentNo].content.substr(charIndex).split("")
-    // const keyboard_keys = {}
-    // for (let i = 0; i < chars.length; i++) {
-    //   const ch = chars[i];
-    //   keyboard_keys[ch] = keyboard_keys[ch] ? keyboard_keys[ch] + 1 : 1
-    // }
+    const chars = questions[currentNo].content.substr(charIndex).split("")
+    const keyboard_keys = {}
+    for (let i = 0; i < chars.length; i++) {
+      const ch = chars[i];
+      keyboard_keys[ch] = keyboard_keys[ch] ? keyboard_keys[ch] + 1 : 1
+    }
 
     return (
       <div>
@@ -255,8 +251,8 @@ class Screen extends React.Component {
                   <InputField onChange={(e) => this.input(e)} textVal={this.state.textVal} />
                 </CardContent>
               </Card>
-              <KeywordCards questions={questions} currentNo={currentNo} />
             </Grid>
+            <KeywordCards questions={questions} currentNo={currentNo} />
           </Grid>
 
         </Container>
@@ -362,32 +358,32 @@ function Keyboard(props) {
   ]
 
   const finger = (k) => {
-    const f = keys_list.map(keys => keys.findIndex(key => key == k)).find(key => key != -1)
-    if (f == 0) {
+    const f = keys_list.map(keys => keys.findIndex(key => key === k)).find(key => key !== -1)
+    if (f === 0) {
       return "左小"
     }
-    if (f == 1) {
+    if (f === 1) {
       return "左薬"
     }
-    if (f == 2) {
+    if (f === 2) {
       return "左中"
     }
-    if (f == 3) {
+    if (f === 3) {
       return "左人"
     }
-    if (f == 4) {
+    if (f === 4) {
       return "左人"
     }
-    if (f == 5) {
+    if (f === 5) {
       return "右人"
     }
-    if (f == 6) {
+    if (f === 6) {
       return "右人"
     }
-    if (f == 7) {
+    if (f === 7) {
       return "右中"
     }
-    if (f == 8) {
+    if (f === 8) {
       return "右薬"
     }
     return "右小"
@@ -400,14 +396,14 @@ function Keyboard(props) {
       let message = "　"
       let cardClassName = "miss-card"
       if (miss_type_count != null && miss_type_count[k.toLowerCase()] != null) {
-        if (mode == "count") {
+        if (mode === "count") {
           message = miss_type_count[k.toLowerCase()] + "F"
-        } else if (mode == "finger") {
+        } else if (mode === "finger") {
           message = finger(k.toUpperCase())
         } 
         if (miss_type_count[k.toLowerCase()] >= 3) {
           cardClassName += " active3"
-        } else if (miss_type_count[k.toLowerCase()] == 2) {
+        } else if (miss_type_count[k.toLowerCase()] === 2) {
           cardClassName += " active2"
         } else {
           cardClassName += " active"
