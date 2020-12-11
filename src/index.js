@@ -337,7 +337,7 @@ function Top(props) {
             <Card style={{ "textAlign": "center", "marginTop": "1rem", "marginBottom": "1rem" }}>
               <CardContent>
                 <h1>Type-Fire</h1>
-                <p>Type-Fireはプログラミング初学者のためのタイピングアプリです。<br />
+                <p>Type-Fireはプログラミングを学べるタイピングアプリです。<br />
                 プログラミング用語 x タイピング というどこかにありそうなコンセプトのもと開発しています。<br />
                 リンクをクリックするとタイピングの練習が始まります。<br />
                 </p>
@@ -620,7 +620,7 @@ function Score(props) {
                   シェア
                 </Typography>
                 <h1>
-                  <TwitterShareButton options={{
+                  <TwitterShareButton url="https://typefire.io/" options={{
                     text: "Type-Fire: プログラミングを学べるタイピングアプリ\n\nステータス: " + status + "\n正確性: " + accuracy + " %\nタイム: " + totalTime + " s\nスピード: " + typePerSecond + " t/s\n\n"
                   }} />
                 </h1>
