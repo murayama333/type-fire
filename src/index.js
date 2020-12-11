@@ -8,19 +8,19 @@ import php from "highlight.js/lib/languages/php";
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import { AppBar, Card, CardContent, Container, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField, ThemeProvider, Toolbar, Typography } from '@material-ui/core';
+import { AppBar, Card, CardContent, Container, Hidden, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField, ThemeProvider, Toolbar, Typography } from '@material-ui/core';
 import axios from 'axios';
 
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import { createMuiTheme } from '@material-ui/core/styles';
 import { LibraryBooks } from '@material-ui/icons';
-
+import { TwitterFollowButton, TwitterShareButton } from 'react-twitter-embed'
 
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: "#1b5e20",
+      main: "#43a047",
     },
     secondary: {
       main: '#f44336',
@@ -261,6 +261,70 @@ class Screen extends React.Component {
   }
 }
 
+function Menu(props) {
+  return (
+    <Grid container spacing={1} style={{ "marginBottom": "1rem" }}>
+      <Grid item xs={12} md={3}>
+        <Card>
+          <CardContent style={{ "paddingBottom": "16px", "textAlign": "center" }}>
+            <Link to="/t/php-basic/10">#php-basic(10)</Link>
+          </CardContent>
+        </Card>
+      </Grid>
+      <Grid item xs={12} md={3}>
+        <Card>
+          <CardContent style={{ "paddingBottom": "16px", "textAlign": "center" }}>
+            <Link to="/t/php-string/5">#php-string(5)</Link>
+          </CardContent>
+        </Card>
+      </Grid>
+      <Grid item xs={12} md={3}>
+        <Card>
+          <CardContent style={{ "paddingBottom": "16px", "textAlign": "center" }}>
+            <Link to="/t/php-array/5">#php-array(5)</Link>
+          </CardContent>
+        </Card>
+      </Grid>
+      <Grid item xs={12} md={3}>
+        <Card>
+          <CardContent style={{ "paddingBottom": "16px", "textAlign": "center" }}>
+            <Link to="/t/php-filesystem/5">#php-filesystem(5)</Link>
+          </CardContent>
+        </Card>
+      </Grid>
+      <Grid item xs={12} md={3}>
+        <Card>
+          <CardContent style={{ "paddingBottom": "16px", "textAlign": "center" }}>
+            <Link to="/t/php-all/10">#php-all(10)</Link>
+          </CardContent>
+        </Card>
+      </Grid>
+      <Grid item xs={12} md={3}>
+        <Card>
+          <CardContent style={{ "paddingBottom": "16px", "textAlign": "center" }}>
+            <Link to="/t/php-all/10">#php-all(20)</Link>
+          </CardContent>
+        </Card>
+      </Grid>
+      <Grid item xs={12} md={3}>
+        <Card>
+          <CardContent style={{ "paddingBottom": "16px", "textAlign": "center" }}>
+            <Link to="/t/php-all/30">#php-all(30)</Link>
+          </CardContent>
+        </Card>
+      </Grid>
+      <Grid item xs={12} md={3}>
+        <Card>
+          <CardContent style={{ "paddingBottom": "14px", "textAlign": "center" }}>
+            <TwitterFollowButton screenName="murayama333" />
+          </CardContent>
+        </Card>
+      </Grid>
+    </Grid>
+  )
+}
+
+
 function Top(props) {
   const classes = useStyles();
   return (
@@ -279,64 +343,7 @@ function Top(props) {
                 </p>
               </CardContent>
             </Card>
-            <Grid container spacing={1}>
-              <Grid item xs={12} md={3}>
-                <Card>
-                  <CardContent style={{ "paddingBottom": "16px", "textAlign": "center" }}>
-                    <Link to="/t/php-basic/10">#php-basic(10)</Link>
-                  </CardContent>
-                </Card>
-              </Grid>
-              <Grid item xs={12} md={3}>
-                <Card>
-                  <CardContent style={{ "paddingBottom": "16px", "textAlign": "center" }}>
-                    <Link to="/t/php-string/5">#php-string(5)</Link>
-                  </CardContent>
-                </Card>
-              </Grid>
-              <Grid item xs={12} md={3}>
-                <Card>
-                  <CardContent style={{ "paddingBottom": "16px", "textAlign": "center" }}>
-                    <Link to="/t/php-array/5">#php-array(5)</Link>
-                  </CardContent>
-                </Card>
-              </Grid>
-              <Grid item xs={12} md={3}>
-                <Card>
-                  <CardContent style={{ "paddingBottom": "16px", "textAlign": "center" }}>
-                    <Link to="/t/php-filesystem/5">#php-filesystem(5)</Link>
-                  </CardContent>
-                </Card>
-              </Grid>
-              <Grid item xs={12} md={3}>
-                <Card>
-                  <CardContent style={{ "paddingBottom": "16px", "textAlign": "center" }}>
-                    <Link to="/t/php-all/10">#php-all(10)</Link>
-                  </CardContent>
-                </Card>
-              </Grid>
-              <Grid item xs={12} md={3}>
-                <Card>
-                  <CardContent style={{ "paddingBottom": "16px", "textAlign": "center" }}>
-                    <Link to="/t/php-all/10">#php-all(20)</Link>
-                  </CardContent>
-                </Card>
-              </Grid>
-              <Grid item xs={12} md={3}>
-                <Card>
-                  <CardContent style={{ "paddingBottom": "16px", "textAlign": "center" }}>
-                    <Link to="/t/php-all/30">#php-all(30)</Link>
-                  </CardContent>
-                </Card>
-              </Grid>
-              <Grid item xs={12} md={3}>
-                <Card>
-                  <CardContent style={{ "paddingBottom": "16px", "textAlign": "center" }}>
-                    <a href="https://twitter.com/murayama333" target="_blank" rel="noopener noreferrer">Twitter: murayama333</a>
-                  </CardContent>
-                </Card>
-              </Grid>
-            </Grid>
+            <Menu />
           </Grid>
         </Grid>
       </Container>
@@ -400,7 +407,7 @@ function Keyboard(props) {
           message = miss_type_count[k.toLowerCase()] + "F"
         } else if (mode === "finger") {
           message = finger(k.toUpperCase())
-        } 
+        }
         if (miss_type_count[k.toLowerCase()] >= 3) {
           cardClassName += " active3"
         } else if (miss_type_count[k.toLowerCase()] === 2) {
@@ -411,16 +418,18 @@ function Keyboard(props) {
       }
 
       return (
-        <Grid item xs={2} md={1} key={miss_index} className="miss-grid">
-          <Card className={cardClassName}>
-            <CardContent>
-              <Typography color="textSecondary">
-                {message}
-              </Typography>
-              <h1 className={message !== "　" ? "active" : ""}>{k}</h1>
-            </CardContent>
-          </Card>
-        </Grid>
+        <Hidden smDown key={miss_index}>
+          <Grid item xs={2} md={1} className="miss-grid">
+            <Card className={cardClassName}>
+              <CardContent>
+                <Typography color="textSecondary">
+                  {message}
+                </Typography>
+                <h1 className={message !== "　" ? "active" : ""}>{k}</h1>
+              </CardContent>
+            </Card>
+          </Grid>
+        </Hidden>
       )
     })
   })
@@ -526,45 +535,17 @@ function Score(props) {
       </TableCell>
       <TableCell align="center">{accuracy}%</TableCell>
       <TableCell align="center">{time}s</TableCell>
-      <TableCell align="center">
-        <a href={question.url} target="_blank" rel="noopener noreferrer">
+      <TableCell align="center" style={{ "height": "29px"}}>
+        {question.url !== ""
+        ? (
+          <a href={question.url} target="_blank" rel="noopener noreferrer">
           <LibraryBooks color="primary" />
         </a>
+        )
+        : "　"}
       </TableCell>
     </TableRow>)
   })
-
-
-  // const keys_list = [
-  //   ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "^"],
-  //   ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "@", "["],
-  //   ["A", "S", "D", "F", "G", "H", "J", "K", "L", ";", ":", "]"],
-  //   ["Z", "X", "C", "V", "B", "N", "M", ",", ".", "/", "_"],
-  // ]
-
-  // let miss_index = 0
-  // const miss_type_analytics = keys_list.map((keys) => {
-  //   return keys.map(k => {
-  //     miss_index++
-  //     let message = "　"
-  //     if (miss_type_count[k.toLowerCase()] != null) {
-  //       message = miss_type_count[k.toLowerCase()] + "F"
-  //     }
-  //     const cardClassName = "miss-card" + (message !== "　" ? " active" : "")
-  //     return (
-  //       <Grid item xs={2} md={1} key={miss_index} className="miss-grid">
-  //         <Card className={cardClassName}>
-  //           <CardContent>
-  //             <Typography color="textSecondary">
-  //               {message}
-  //             </Typography>
-  //             <h1 className={message !== "　" ? "active" : ""}>{k}</h1>
-  //           </CardContent>
-  //         </Card>
-  //       </Grid>
-  //     )
-  //   })
-  // })
 
   const fire = answer_content_length - question_content_length
   let status
@@ -580,86 +561,96 @@ function Score(props) {
 
   const accuracy = Math.floor((question_content_length / answer_content_length) * 100)
   const typePerSecond = Math.floor(question_content_length / totalTime * 100) / 100
-  const firePerSecond = Math.floor(fire / totalTime * 100) / 100
+  // const firePerSecond = Math.floor(fire / totalTime * 100) / 100
   const classes = useStyles();
   return (
     <div>
       <Container className={classes.containerStyle}>
-        <Grid container spacing={6}>
-          <Grid item xs={12} md={12}>
-
+        <Grid container spacing={1}>
+          <Grid item xs={12} md={12} style={{ "marginBottom": "1rem" }} >
             <Keyboard miss_type_count={miss_type_count} mode="count" />
-
-            <Grid container spacing={2} style={{ "marginTop": "1rem" }}>
-              <Grid item xs={12} md={9}>
-                <TableContainer component={Paper}>
-                  <Table className={classes.table} aria-label="simple table">
-                    <TableHead>
-                      <TableRow>
-                        <TableCell align="center">キーワード</TableCell>
-                        <TableCell align="center">タイピング</TableCell>
-                        <TableCell align="center">ヒット率</TableCell>
-                        <TableCell align="center">タイム</TableCell>
-                        <TableCell align="center">解説ページ</TableCell>
-                      </TableRow>
-                    </TableHead>
-                    <TableBody>
-                      {rows}
-                    </TableBody>
-                  </Table>
-                </TableContainer>
-              </Grid>
-
-              <Grid item xs={12} md={3}>
-                <Card className="analyticsCard">
-                  <CardContent>
-                    <Typography color="textSecondary">
-                      ステータス
-                    </Typography>
-                    <h1 className={statusClassName}>{status}</h1>
-                  </CardContent>
-                </Card>
-                <Card className="analyticsCard">
-                  <CardContent>
-                    <Typography color="textSecondary">
-                      ヒット率（{question_content_length} / {answer_content_length}）
-                    </Typography>
-                    <h1>{accuracy}%</h1>
-                    <Typography color="textPrimary">
-
-                    </Typography>
-                  </CardContent>
-                </Card>
-                <Card className="analyticsCard">
-                  <CardContent>
-                    <Typography color="textSecondary">
-                      タイム
-                    </Typography>
-                    <h1>{totalTime}s</h1>
-                  </CardContent>
-                </Card>
-                <Card className="analyticsCard">
-                  <CardContent>
-                    <Typography color="textSecondary">
-                      スピード（1秒あたりのタイプ数）
-                    </Typography>
-                    <h1>{typePerSecond} t/s</h1>
-                  </CardContent>
-                </Card>
-                <Card className="analyticsCard">
-                  <CardContent>
-                    <Typography color="textSecondary">
-                      Fireスピード（1秒あたりのFire数）
-                    </Typography>
-                    <h1>{firePerSecond} f/s</h1>
-                  </CardContent>
-                </Card>
-              </Grid>
-            </Grid>
           </Grid>
+          <Grid item xs={12} md={12}>
+            <Card className="analyticsCard">
+              <CardContent>
+                <Typography color="textSecondary">
+                  ステータス
+                    </Typography>
+                <h1 className={statusClassName}>{status}</h1>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={12} md={3}>
+            <Card className="analyticsCard">
+              <CardContent>
+                <Typography color="textSecondary">
+                  ヒット率（{question_content_length} / {answer_content_length}）
+                    </Typography>
+                <h1>{accuracy} %</h1>
+                <Typography color="textPrimary">
+
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={12} md={3}>
+            <Card className="analyticsCard">
+              <CardContent>
+                <Typography color="textSecondary">
+                  タイム
+                    </Typography>
+                <h1>{totalTime} s</h1>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={12} md={3}>
+            <Card className="analyticsCard">
+              <CardContent>
+                <Typography color="textSecondary">
+                  スピード（タイプ数 / 秒）
+                    </Typography>
+                <h1>{typePerSecond} t/s</h1>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={12} md={3}>
+            <Card className="analyticsCard">
+              <CardContent>
+                <Typography color="textSecondary">
+                  シェア
+                </Typography>
+                <h1>
+                  <TwitterShareButton options={{
+                    text: "Type-Fire: プログラミングを学べるタイピングアプリ\n\nステータス: " + status + "\n正確性: " + accuracy + " %\nタイム: " + totalTime + " s\nスピード: " + typePerSecond + " t/s\n\n"
+                  }} />
+                </h1>
+              </CardContent>
+            </Card>
+          </Grid>
+
+          <Grid item xs={12} md={12} style={{ "marginBottom": "1rem" }}>
+            <TableContainer component={Paper}>
+              <Table className={classes.table} aria-label="simple table">
+                <TableHead>
+                  <TableRow>
+                    <TableCell align="center">キーワード</TableCell>
+                    <TableCell align="center">タイピング</TableCell>
+                    <TableCell align="center">ヒット率</TableCell>
+                    <TableCell align="center">タイム</TableCell>
+                    <TableCell align="center">解説ページ</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {rows}
+                </TableBody>
+              </Table>
+            </TableContainer>
+          </Grid>
+
+          <Menu />
         </Grid>
       </Container>
-    </div>
+    </div >
   );
 }
 
