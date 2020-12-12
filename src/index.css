@@ -64,6 +64,28 @@ body {
   color: white;
 }
 
+/* .analyticsCard.active {
+  background-color: #f44336;
+}
+
+.analyticsCard.active h1 {
+  color: white;
+}
+.analyticsCard.active p {
+  color: white;
+}
+
+.analyticsCard.excellent {
+  background-color: #43a047;
+}
+
+.analyticsCard.excellent h1 {
+  color: white;
+}
+.analyticsCard.excellent p {
+  color: white;
+} */
+
 
 
 .MuiPaper-root.MuiCard-root.analyticsCard {

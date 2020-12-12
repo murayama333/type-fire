@@ -315,7 +315,7 @@ function Menu(props) {
       </Grid>
       <Grid item xs={12} md={3}>
         <Card>
-          <CardContent style={{ "paddingBottom": "14px", "textAlign": "center" }}>
+          <CardContent style={{ "paddingBottom": "11px", "textAlign": "center" }}>
             <TwitterFollowButton screenName="murayama333" />
           </CardContent>
         </Card>
@@ -443,6 +443,13 @@ function Keyboard(props) {
 }
 
 function Score(props) {
+  const classes = useStyles();
+
+  if (props.location.state === undefined) {
+    props.history.push('/')
+    return (<></>)
+  }
+
   const { questions, answers, startTimes, endTimes } = props.location.state
 
   const miss_type_count = {}
@@ -562,7 +569,6 @@ function Score(props) {
   const accuracy = Math.floor((question_content_length / answer_content_length) * 100)
   const typePerSecond = Math.floor(question_content_length / totalTime * 100) / 100
   // const firePerSecond = Math.floor(fire / totalTime * 100) / 100
-  const classes = useStyles();
   return (
     <div>
       <Container className={classes.containerStyle}>
@@ -571,7 +577,7 @@ function Score(props) {
             <Keyboard miss_type_count={miss_type_count} mode="count" />
           </Grid>
           <Grid item xs={12} md={12}>
-            <Card className="analyticsCard">
+            <Card className={"analyticsCard " + statusClassName}>
               <CardContent>
                 <Typography color="textSecondary">
                   ステータス
