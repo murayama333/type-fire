@@ -1,5 +1,6 @@
 body {
   background-color: #fafafa;
+  font-family: "Segoe UI", Meiryo, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .active {
@@ -7,7 +8,7 @@ body {
 }
 
 .excellent {
-  color: #1b5e20;
+  color: #43a047;
 }
 
 .miss-grid .miss-card .MuiCardContent-root {
