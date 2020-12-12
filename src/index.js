@@ -221,7 +221,6 @@ class Screen extends React.Component {
     }
     const textFieldCard = {
       "textAlign": "center",
-      "marginTop": "1rem",
       "marginBottom": "1rem"
     }
 
@@ -334,13 +333,11 @@ function Top(props) {
           <Grid item xs={12} md={12}>
 
             <Keyboard show_fire={false} miss_type_count={{ "3": 1, "4": 1, "5": 1, "r": 1, "f": 1, "v": 1, "8": 1, "9": 1, "0": 1, "i": 1, "k": 1, ",": 1, "l": 1, ";": 1 }} />
-            <Card style={{ "textAlign": "center", "marginTop": "1rem", "marginBottom": "1rem" }}>
+            <Card style={{ "textAlign": "center", "marginBottom": "1rem" }}>
               <CardContent>
                 <h1>Type-Fire</h1>
-                <p>Type-Fireはプログラミングを学べるタイピングアプリです。<br />
-                プログラミング用語 x タイピング というどこかにありそうなコンセプトのもと開発しています。<br />
-                リンクをクリックするとタイピングの練習が始まります。<br />
-                </p>
+                <p>Type-Fireはプログラミングを学べる<br />タイピングアプリです。</p>                
+                <p>リンクをクリックすると<br />タイピングの練習がスタートします。</p>
               </CardContent>
             </Card>
             <Menu />
@@ -435,7 +432,7 @@ function Keyboard(props) {
   })
 
   return (
-    <Grid container spacing={1}>
+    <Grid container spacing={1} className="keyboard">
       {miss_type_analytics}
     </Grid>
   )
@@ -573,10 +570,8 @@ function Score(props) {
     <div>
       <Container className={classes.containerStyle}>
         <Grid container spacing={1}>
-          <Grid item xs={12} md={12} style={{ "marginBottom": "1rem" }} >
-            <Keyboard miss_type_count={miss_type_count} mode="count" />
-          </Grid>
           <Grid item xs={12} md={12}>
+            <Keyboard miss_type_count={miss_type_count} mode="count" />
             <Card className={"analyticsCard " + statusClassName}>
               <CardContent>
                 <Typography color="textSecondary">
@@ -635,7 +630,7 @@ function Score(props) {
           </Grid>
 
           <Grid item xs={12} md={12} style={{ "marginBottom": "1rem" }}>
-            <TableContainer component={Paper}>
+            <TableContainer component={Paper} style={{ "marginBottom": "1rem" }}>
               <Table className={classes.table} aria-label="simple table">
                 <TableHead>
                   <TableRow>
@@ -651,9 +646,12 @@ function Score(props) {
                 </TableBody>
               </Table>
             </TableContainer>
+
+
+            <Menu />
           </Grid>
 
-          <Menu />
+
         </Grid>
       </Container>
     </div >
