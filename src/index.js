@@ -225,15 +225,15 @@ class Screen extends React.Component {
     }
 
 
-    // const ch = questions[currentNo].content.split("")[charIndex]
-    // const keyboard_keys = { [ch]: 1 }
+    const ch = questions[currentNo].content.split("")[charIndex]
+    const keyboard_keys = { [ch]: 1 }
 
-    const chars = questions[currentNo].content.substr(charIndex).split("")
-    const keyboard_keys = {}
-    for (let i = 0; i < chars.length; i++) {
-      const ch = chars[i];
-      keyboard_keys[ch] = keyboard_keys[ch] ? keyboard_keys[ch] + 1 : 1
-    }
+    // const chars = questions[currentNo].content.substr(charIndex).split("")
+    // const keyboard_keys = {}
+    // for (let i = 0; i < chars.length; i++) {
+    //   const ch = chars[i];
+    //   keyboard_keys[ch] = keyboard_keys[ch] ? keyboard_keys[ch] + 1 : 1
+    // }
 
     return (
       <div>
