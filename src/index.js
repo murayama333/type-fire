@@ -622,7 +622,7 @@ function Score(props) {
                 </Typography>
                 <h1>
                   <TwitterShareButton url="https://typefire.io/" options={{
-                    text: "Type-Fire: プログラミングを学べるタイピングアプリ\n\nステータス: " + status + "\n正確性: " + accuracy + " %\nタイム: " + totalTime + " s\nスピード: " + typePerSecond + " t/s\n\n"
+                    text: "Type-Fire: プログラミングを学べるタイピングアプリ\n\nステータス: " + status + "\nタイプ数: " + answer_content_length + "\nヒット率: " + accuracy + " %\nタイム: " + totalTime + " s\nスピード: " + typePerSecond + " t/s\n\n"
                   }} />
                 </h1>
               </CardContent>
@@ -646,12 +646,8 @@ function Score(props) {
                 </TableBody>
               </Table>
             </TableContainer>
-
-
             <Menu />
           </Grid>
-
-
         </Grid>
       </Container>
     </div >
