@@ -280,7 +280,7 @@ function Menu(props) {
       <Grid item xs={12} md={3}>
         <Card>
           <CardContent style={{ "paddingBottom": "16px", "textAlign": "center" }}>
-            <Link to="/t/php-array/5">#php-array(5)</Link>
+            <Link to="/t/php-array/5">#PHP-array(5)</Link>
           </CardContent>
         </Card>
       </Grid>
