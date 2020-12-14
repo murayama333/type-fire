@@ -266,14 +266,14 @@ function Menu(props) {
       <Grid item xs={12} md={3}>
         <Card>
           <CardContent style={{ "paddingBottom": "16px", "textAlign": "center" }}>
-            <Link to="/t/php-basic/10">#php-basic(10)</Link>
+            <Link to="/t/php-basic/10">#PHP-basic(10)</Link>
           </CardContent>
         </Card>
       </Grid>
       <Grid item xs={12} md={3}>
         <Card>
           <CardContent style={{ "paddingBottom": "16px", "textAlign": "center" }}>
-            <Link to="/t/php-string/5">#php-string(5)</Link>
+            <Link to="/t/php-string/5">#PHP-string(5)</Link>
           </CardContent>
         </Card>
       </Grid>
@@ -287,28 +287,28 @@ function Menu(props) {
       <Grid item xs={12} md={3}>
         <Card>
           <CardContent style={{ "paddingBottom": "16px", "textAlign": "center" }}>
-            <Link to="/t/php-filesystem/5">#php-filesystem(5)</Link>
+            <Link to="/t/php-filesystem/5">#PHP-filesystem(5)</Link>
           </CardContent>
         </Card>
       </Grid>
       <Grid item xs={12} md={3}>
         <Card>
           <CardContent style={{ "paddingBottom": "16px", "textAlign": "center" }}>
-            <Link to="/t/php-all/10">#php-all(10)</Link>
+            <Link to="/t/php-all/10">#PHP(10)</Link>
           </CardContent>
         </Card>
       </Grid>
       <Grid item xs={12} md={3}>
         <Card>
           <CardContent style={{ "paddingBottom": "16px", "textAlign": "center" }}>
-            <Link to="/t/php-all/10">#php-all(20)</Link>
+            <Link to="/t/php-all/10">#PHP(20)</Link>
           </CardContent>
         </Card>
       </Grid>
       <Grid item xs={12} md={3}>
         <Card>
           <CardContent style={{ "paddingBottom": "16px", "textAlign": "center" }}>
-            <Link to="/t/php-all/30">#php-all(30)</Link>
+            <Link to="/t/php-all/30">#PHP(30)</Link>
           </CardContent>
         </Card>
       </Grid>
