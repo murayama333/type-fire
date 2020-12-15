@@ -340,7 +340,7 @@ function Top(props) {
                 <p>リンクをクリックすると<br />タイピングゲームがスタートします。</p>
                 <h3>タイピングレベル</h3>
                 <p>
-                  S級: 超速い　<br/>
+                  S級: 超速　　<br/>
                   A級: 速い　　<br/>
                   B級: なかなか<br/>
                   C級: まぁまぁ<br/>
@@ -588,7 +588,7 @@ function Score(props) {
     grade = "C"
   }
 
-  if (accuracy == 100) {
+  if (accuracy === 100) {
     grade += "+"
   }
 
@@ -600,7 +600,7 @@ function Score(props) {
             <Keyboard miss_type_count={miss_type_count} mode="count" />
           </Grid>
           <Grid item xs={12} md={12}>
-            <Card className="analyticsCard">
+            <Card className="analyticsCard excellent">
               <CardContent>
                 <Typography color="textSecondary">
                   タイピングレベル<br />（S, A, B, C, D）
