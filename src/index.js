@@ -600,12 +600,12 @@ function Score(props) {
             <Keyboard miss_type_count={miss_type_count} mode="count" />
           </Grid>
           <Grid item xs={12} md={12}>
-            <Card className="analyticsCard excellent">
+            <Card className="analyticsCard">
               <CardContent>
                 <Typography color="textSecondary">
                   タイピングレベル<br />（S, A, B, C, D）
                     </Typography>
-                <h1>{grade}</h1>
+                <h1 className="excellent">{grade}</h1>
               </CardContent>
             </Card>
           </Grid>
