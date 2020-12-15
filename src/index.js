@@ -566,16 +566,46 @@ function Score(props) {
   const accuracy = Math.floor((question_content_length / answer_content_length) * 100)
   const typePerSecond = Math.floor(question_content_length / totalTime * 100) / 100
   // const firePerSecond = Math.floor(fire / totalTime * 100) / 100
+
+  let grade = "D"
+  if (typePerSecond >= 5.0) {
+    grade = "SS"
+  } else if (typePerSecond >= 4.5) {
+    grade = "S"
+  } else if (typePerSecond >= 4.0) {
+    grade = "A"
+  } else if (typePerSecond >= 3.5) {
+    grade = "B"
+  } else if (typePerSecond >= 3.0) {
+    grade = "C"
+  }
+
+  if (accuracy == 100) {
+    grade += "+"
+  }
+
   return (
     <div>
       <Container className={classes.containerStyle}>
         <Grid container spacing={1}>
           <Grid item xs={12} md={12}>
             <Keyboard miss_type_count={miss_type_count} mode="count" />
+          </Grid>
+          <Grid item xs={12} md={12}>
+            <Card className="analyticsCard">
+              <CardContent>
+                <Typography color="textSecondary">
+                  タイピングレベル<br />（S, A, B, C, D）
+                    </Typography>
+                <h1>{grade}</h1>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={12} md={3}>
             <Card className={"analyticsCard " + statusClassName}>
               <CardContent>
                 <Typography color="textSecondary">
-                  ステータス
+                  タイプミス
                     </Typography>
                 <h1 className={statusClassName}>{status}</h1>
               </CardContent>
@@ -588,9 +618,6 @@ function Score(props) {
                   ヒット率（{question_content_length} / {answer_content_length}）
                     </Typography>
                 <h1>{accuracy} %</h1>
-                <Typography color="textPrimary">
-
-                </Typography>
               </CardContent>
             </Card>
           </Grid>
@@ -598,17 +625,7 @@ function Score(props) {
             <Card className="analyticsCard">
               <CardContent>
                 <Typography color="textSecondary">
-                  タイム
-                    </Typography>
-                <h1>{totalTime} s</h1>
-              </CardContent>
-            </Card>
-          </Grid>
-          <Grid item xs={12} md={3}>
-            <Card className="analyticsCard">
-              <CardContent>
-                <Typography color="textSecondary">
-                  スピード（タイプ数 / 秒）
+                  スピード（タイプ / 秒）
                     </Typography>
                 <h1>{typePerSecond} t/s</h1>
               </CardContent>
@@ -622,7 +639,7 @@ function Score(props) {
                 </Typography>
                 <h1>
                   <TwitterShareButton url="https://typefire.io/" options={{
-                    text: "Type-Fire: プログラミングを学べるタイピングアプリ\n\nステータス: " + status + "\nタイプ数: " + answer_content_length + "\nヒット率: " + accuracy + " %\nタイム: " + totalTime + " s\nスピード: " + typePerSecond + " t/s\n\n"
+                    text: "Type-Fire: プログラミングを学べるタイピングアプリ\n\nタイピングレベル: " + grade + "\nタイプ数: " + answer_content_length + "\nヒット率: " + accuracy + " %\nスピード: " + typePerSecond + " t/s\n\n"
                   }} />
                 </h1>
               </CardContent>
