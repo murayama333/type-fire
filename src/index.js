@@ -337,7 +337,15 @@ function Top(props) {
               <CardContent>
                 <h1>Type-Fire</h1>
                 <p>Type-Fireはプログラミングを学べる<br />タイピングアプリです。</p>
-                <p>リンクをクリックすると<br />タイピングの練習がスタートします。</p>
+                <p>リンクをクリックすると<br />タイピングゲームがスタートします。</p>
+                <h3>タイピングレベル</h3>
+                <p>
+                  S級: 超速い　<br/>
+                  A級: 速い　　<br/>
+                  B級: なかなか<br/>
+                  C級: まぁまぁ<br/>
+                  D級: そこそこ<br/>
+                </p>
               </CardContent>
             </Card>
             <Menu />
