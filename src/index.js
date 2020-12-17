@@ -336,7 +336,7 @@ function Top(props) {
             <Card style={{ "textAlign": "center", "marginBottom": "1rem" }}>
               <CardContent>
                 <h1>Type-Fire</h1>
-                <p>Type-Fireはプログラミングを学べる<br />タイピングアプリです。</p>
+                <p>Type-Fireはプログラミングが速くなる<br />タイピングアプリです。</p>
                 <h3>タイピングレベル</h3>
                 <p>
                   S級: 超速　　<br/>
