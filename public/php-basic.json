@@ -3,90 +3,90 @@
     "id": 1,
     "content": "echo",
     "desc": "1つ以上の文字列を出力する",
-    "url": "https://code-php.com/php-basic/php/php/"
+    "url": "https://codeguide.jp/php-basic/php/php/"
   },
   {
     "id": 2,
     "content": "integer",
     "desc": "整数型",
-    "url": "https://code-php.com/php-basic/var/type/"
+    "url": "https://codeguide.jp/php-basic/var/type/"
   },
   {
     "id": 3,
     "content": "float",
     "desc": "浮動小数点数型",
-    "url": "https://code-php.com/php-basic/var/type/"
+    "url": "https://codeguide.jp/php-basic/var/type/"
   },
   {
     "id": 4,
     "content": "string",
     "desc": "文字列型",
-    "url": "https://code-php.com/php-basic/var/type/"
+    "url": "https://codeguide.jp/php-basic/var/type/"
   },
   {
     "id": 5,
     "content": "boolean",
     "desc": "論理型",
-    "url": "https://code-php.com/php-basic/var/type/"
+    "url": "https://codeguide.jp/php-basic/var/type/"
   },
   {
     "id": 6,
     "content": "array",
     "desc": "配列型",
-    "url": "https://code-php.com/php-basic/var/type/"
+    "url": "https://codeguide.jp/php-basic/var/type/"
   },
   {
     "id": 7,
     "content": "null",
     "desc": "NULL型",
-    "url": "https://code-php.com/php-basic/var/type/"
+    "url": "https://codeguide.jp/php-basic/var/type/"
   },
   {
     "id": 8,
     "content": "if",
     "desc": "分岐構造",
-    "url": "https://code-php.com/php-basic/choice/if/"
+    "url": "https://codeguide.jp/php-basic/choice/if/"
   },
   {
     "id": 9,
     "content": "else",
     "desc": "分岐構造（if文が不成立の場合）",
-    "url": "https://code-php.com/php-basic/choice/if-else/"
+    "url": "https://codeguide.jp/php-basic/choice/if-else/"
   },
   {
     "id": 10,
     "content": "elseif",
     "desc": "分岐構造（if文の条件が複数存在する場合）",
-    "url": "https://code-php.com/php-basic/choice/if-elseif/"
+    "url": "https://codeguide.jp/php-basic/choice/if-elseif/"
   },
   {
     "id": 11,
     "content": "while",
     "desc": "反復構造（単純（Simple）なループ）",
-    "url": "https://code-php.com/php-basic/loop/while/"
+    "url": "https://codeguide.jp/php-basic/loop/while/"
   },
   {
     "id": 12,
     "content": "for",
     "desc": "反復構造（複雑（Complex）なループ）",
-    "url": "https://code-php.com/php-basic/loop/for/"
+    "url": "https://codeguide.jp/php-basic/loop/for/"
   },
   {
     "id": 13,
     "content": "break",
     "desc": "反復処理（ループ）を終了する",
-    "url": "https://code-php.com/php-basic/loop/break/"
+    "url": "https://codeguide.jp/php-basic/loop/break/"
   },
   {
     "id": 14,
     "content": "continue",
     "desc": "次の反復処理（ループ）に進む",
-    "url": "https://code-php.com/php-basic/loop/break/"
+    "url": "https://codeguide.jp/php-basic/loop/break/"
   },
   {
     "id": 15,
     "content": "function",
     "desc": "ユーザ定義関数",
-    "url": "https://code-php.com/php-basic/function-user/index/"
+    "url": "https://codeguide.jp/php-basic/function-user/index/"
   }
 ]

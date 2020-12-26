@@ -3,48 +3,48 @@
     "id": 1,
     "content": "file_put_contents",
     "desc": "文字列をファイルに書き込む",
-    "url": "https://code-php.com/php-basic/function-filesystem/file_put_contents/"
+    "url": "https://codeguide.jp/php-basic/function-filesystem/file_put_contents/"
   },
   {
     "id": 2,
     "content": "file_get_contents",
     "desc": "ファイルの内容を全て文字列に読み込む",
-    "url": "https://code-php.com/php-basic/function-filesystem/file_get_contents/"
+    "url": "https://codeguide.jp/php-basic/function-filesystem/file_get_contents/"
   },
   {
     "id": 3,
     "content": "file",
     "desc": "ファイル全体を読み込んで配列に格納する",
-    "url": "https://code-php.com/php-basic/function-filesystem/file/"
+    "url": "https://codeguide.jp/php-basic/function-filesystem/file/"
   },
   {
     "id": 4,
     "content": "mkdir",
     "desc": "ディレクトリを作る",
-    "url": "https://code-php.com/php-basic/function-filesystem/mkdir/"
+    "url": "https://codeguide.jp/php-basic/function-filesystem/mkdir/"
   },
   {
     "id": 5,
     "content": "fopen",
     "desc": "ファイルまたは URL をオープンする",
-    "url": "https://code-php.com/php-basic/function-filesystem/fgets/"
+    "url": "https://codeguide.jp/php-basic/function-filesystem/fgets/"
   },
   {
     "id": 6,
     "content": "fgets",
     "desc": "ファイルまたは URL をオープンする",
-    "url": "https://code-php.com/php-basic/function-filesystem/fgets/"
+    "url": "https://codeguide.jp/php-basic/function-filesystem/fgets/"
   },
   {
     "id": 7,
     "content": "fclose",
     "desc": "オープンされたファイルポインタをクローズする",
-    "url": "https://code-php.com/php-basic/function-filesystem/fgets/"
+    "url": "https://codeguide.jp/php-basic/function-filesystem/fgets/"
   },
   {
     "id": 8,
     "content": "fwrite",
     "desc": "バイナリセーフなファイル書き込み処理",
-    "url": "https://code-php.com/php-basic/function-filesystem/fwrite/"
+    "url": "https://codeguide.jp/php-basic/function-filesystem/fwrite/"
   }  
 ]
